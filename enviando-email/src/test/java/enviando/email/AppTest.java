@@ -53,6 +53,7 @@ public class AppTest{
 		message.setSubject("Chegou e-mail enviado com java");/*assunto do e-mail*/
 		message.setText("Olá programador, você acaba de receber um email enviado com java do curso Formação Java Web do Alex.");
 		
+		System.out.println("ola");
 		
 		
 		Transport.send(message);
