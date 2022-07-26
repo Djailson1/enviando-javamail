@@ -21,7 +21,7 @@ import org.junit.Test;
 public class AppTest{
 	
 	private String userName = "djailsonemailformacaojavaweb@gmail.com";
-	private String senha = "tjusbmgdvjpmiwah";
+	private String senha = "ghhxumcpgrfrwate";
 	
 	@Test
     public void testeEmail() { /*Olhe as configurações do smtp do seu email*/
@@ -34,7 +34,7 @@ public class AppTest{
 		properties.put("mail.smtp.host", "smtp.gmail.com");/*servidor gmail google*/
 		properties.put("mail.smtp.port", "465");/*Porta do servidor google*/
 		properties.put("mail.smtp.socketFactory.port", "465");/*a porta a conectada pelo socket*/
-		properties.put("mail.smtp.socketFactory.class", "javax.net.sll.SLLSocketFactory");/*Classe socket de conexão ao SMTP*/
+		properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");/*Classe socket de conexão ao SMTP*/
 		
 		Session session = Session.getInstance(properties, new Authenticator() {
 			@Override
@@ -43,13 +43,13 @@ public class AppTest{
 			}
 		});
 		
-		Address[] toUser = InternetAddress.parse("djailson_silva1@outlook.com, djailson_silva1@hotmail.com");
+		Address[] toUser = InternetAddress.parse("djailsonemailformacaojavaweb@gmail.com, djailson_silva1@outlook.com, djailson_silva1@hotmail.com");
 		
 		Message message = new MimeMessage(session);
 		message.setFrom(new InternetAddress(userName));/*Quem esta eniando*/
 		message.setRecipients(Message.RecipientType.TO, toUser);/*email de destino*/
 		message.setSubject("Chegou e-mail enviado com java");/*assunto do e-mail*/
-		message.setText("Olá programador, vocÊ acaba de receber um email enviado com java do curso Formação Java Web do Alex.");
+		message.setText("Olá programador, você acaba de receber um email enviado com java do curso Formação Java Web do Alex.");
 		
 		
 		
